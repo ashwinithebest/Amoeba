@@ -13,15 +13,9 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App {
+  background-color: #ffffff;
+  color: '#ffffff';
 }
 
 .App-link {
@@ -36,3 +30,17 @@
     transform: rotate(360deg);
   }
 }
+
+.create{ color: 'white';background:'#9A0680'}
+/* 
+color palette
+#282c34 (dark grey)
+#61dafb (light blue)
+#5cb85c (green)
+#d9534f (red)
+#f0ad4e (orange)
+#428bca (blue)
+#5bc0de (light blue)
+#337ab7 (dark blue)
+#9b59b6 (purple)
+#e74c3c (red-orange) */

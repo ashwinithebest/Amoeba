@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* will change color due to active   */
+/* nav a.active{ 
+  background-color: #D21312;
+  text-decoration: none;
+  font-weight: bold ;
+   
+} */
