@@ -1,14 +1,12 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const Task = () => {
+    const params = useParams();
+    const taskId = params.taskid;
+    console.log(params)
   return (
-    <ul class="list-group">
-  <li class="list-group-item">Task !</li>
-  <li class="list-group-item">Task 2</li>
-  <li class="list-group-item">Task 3</li>
-  <li class="list-group-item">Task 4</li>
-  <li class="list-group-item">Task 5</li>
-</ul>
+<h2>this is task with TaskId: {taskId}</h2>   
   )
 }
 

@@ -10,16 +10,16 @@ const Navbar = () => {
       };
    
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-              <NavLink exact className="nav-link" activeClassName="active" style={activeStyling}  to="/">Home</NavLink>
-              {/* The activeClassName prop is used to set the class name for the active link. */}
+              <NavLink exact='true' className="nav-link" activeclassname="active" style={activeStyling}  to="/">Home</NavLink>
+              {/* The activeClassName prop is used to set the className name for the active link. */}
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" style={activeStyling} to="/taskpage">Task</NavLink>
+              <NavLink className="nav-link" activeclassname="active" style={activeStyling} to="/taskpage">Task</NavLink>
             </li>
           </ul>
         </div>
