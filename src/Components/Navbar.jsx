@@ -19,7 +19,7 @@ const Navbar = () => {
               {/* The activeClassName prop is used to set the class name for the active link. */}
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" style={activeStyling} to="/task">Task</NavLink>
+              <NavLink className="nav-link" activeClassName="active" style={activeStyling} to="/taskpage">Task</NavLink>
             </li>
           </ul>
         </div>

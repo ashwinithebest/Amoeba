@@ -5,6 +5,10 @@ import Homepage from './Components/Homepage';
 import TaskPage from './Components/TaskPage';
 import Navbar from './Components/Navbar';
 import { About } from './Components/About';
+import NoMatch from './Components/NoMatch';
+import IncompleteTasks from './Components/IncompleteTasks';
+import CompletedTasks from './Components/CompletedTasks';
+import Task from './Components/Task';
 
 function App() {
   return (
@@ -12,10 +16,15 @@ function App() {
     <Navbar/>
           <Routes>
             <Route exact path="/" element={<Homepage/>} />
-            <Route path="/task" element={<TaskPage/>} />
+            <Route path="/taskpage" element={<TaskPage/>} >
+              <Route path  = 'incomplete' element ={<IncompleteTasks/>}/>
+              <Route path  = ':taskid' element ={<Task/>}/>
+              <Route index element ={<IncompleteTasks/>}/>
+              <Route path  = 'complete' element ={<CompletedTasks/>}/>
+               </Route>
             <Route path="/about" element={<About/>} />
+            <Route path="*" element={<NoMatch/>} />
           </Routes>
-
     </div>
   );
 }
