@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../Utils/auth';
 
 const Navbar = () => {
     const activeStyling = ({ isActive }) => {
@@ -9,6 +10,8 @@ const Navbar = () => {
         };
       };
    
+      const auth = useAuth()
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -21,6 +24,16 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink className="nav-link" activeclassname="active" style={activeStyling} to="/taskpage">Task</NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" activeclassname="active" style={activeStyling} to="/profile">Profile</NavLink>
+            </li>
+            {
+              !auth.user && (
+                <li className="nav-item">
+                <NavLink className="nav-link" activeclassname="active" style={activeStyling} to="/login">Login</NavLink>
+              </li>
+              )
+            }
           </ul>
         </div>
       </div>
