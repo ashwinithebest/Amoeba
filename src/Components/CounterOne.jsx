@@ -1,13 +1,15 @@
 import React from 'react'
-import { useReducer } from 'react'
+import { useReducer , useState} from 'react'
 
-const initialState = 0;
+const initialState = {
+    firstCounter: 0
+};
 const reducer = (state, action) => {
-    switch (action) {
+    switch (action.pipe) {
         case 'increment':
-            return state + 1;
+            return { firstCounter: state.firstCounter + action.value };
         case 'decrement':
-            return state - 1;
+            return { firstCounter: state.firstCounter - action.value };
         case 'reset':
             return initialState;
         default:
@@ -17,13 +19,16 @@ const reducer = (state, action) => {
 
 const CounterOne = () => {
     const [count, dispatch] = useReducer(reducer, initialState)
+    const [value, setValue] = useState(0)
+
 
     return (
         <div>
-            <div>Count - {count}</div>
-            <button onClick={() => dispatch('increment')}>Increase</button>
-            <button onClick={() => dispatch('decrement')}>Decrease</button>
-            <button onClick={() => dispatch('reset')}>Reset</button>
+            {/* <input type='number' onChange={(e)=>setValue(e.target.value)}></input> */}
+            <div>Count - {count.firstCounter}</div>
+            <button onClick={() => dispatch({ pipe: 'increment',value:5})}>Increase {value}</button>
+            <button onClick={() => dispatch({ pipe: 'decrement',value:5 })}>Decrease {value}</button>
+            <button onClick={() => dispatch({ pipe: 'reset' })}>Reset</button>
         </div>
     )
 }
