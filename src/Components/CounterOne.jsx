@@ -19,15 +19,15 @@ const reducer = (state, action) => {
 
 const CounterOne = () => {
     const [count, dispatch] = useReducer(reducer, initialState)
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState(1)
 
 
     return (
         <div>
-            {/* <input type='number' onChange={(e)=>setValue(e.target.value)}></input> */}
+            <input type='number' onChange={(e)=>setValue(e.target.value)}></input>
             <div>Count - {count.firstCounter}</div>
-            <button onClick={() => dispatch({ pipe: 'increment',value:5})}>Increase {value}</button>
-            <button onClick={() => dispatch({ pipe: 'decrement',value:5 })}>Decrease {value}</button>
+            <button onClick={() => dispatch({ pipe: 'increment',value:parseInt(value) })}>Increase {value}</button>
+            <button onClick={() => dispatch({ pipe: 'decrement',value:parseInt(value) })}>Decrease {value}</button>
             <button onClick={() => dispatch({ pipe: 'reset' })}>Reset</button>
         </div>
     )
